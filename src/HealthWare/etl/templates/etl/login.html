@@ -1,0 +1,8 @@
+{% extends "etl/base.html" %} {% block content %} {% load staticfiles %}
+
+<form action="{{ login }}" method="post">
+    {% csrf_token %}
+	    {{ form }}
+	<input type="submit" value="Log In" class="w3-button w3-theme">
+</form>
+{% endblock %}
