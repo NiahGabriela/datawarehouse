@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import generic
 
 from .forms import Log
+from .models import Query
 
 BASE = {
 'BASE_TITLE' : "ETL",
@@ -16,6 +17,11 @@ BASE = {
 'BASE_FOOTER_LAST' : "Diana Hernandez, Felipe Ruiz",
 'form' : ''
 }
+
+class HandleView(generic.ListView):
+	model = Query
+	template_name = "etl/handle.html"
+
 
 def login(request):
 	if request.method == 'POST':
