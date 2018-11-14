@@ -1,0 +1,94 @@
+{% extends "etl/base.html" %} {% block content %} {% load staticfiles %}
+
+<div class="w3-row-padding">
+<div class="w3-half">
+<div class="w3-card white">
+  <div class="w3-container w3-indigo">
+    <h3>Theme Indigo</h3>
+  </div>
+
+  <div class="w3-container">
+  <h3 class="w3-text-indigo">Movies 2014</h3>
+  </div>
+  <ul class="w3-ul w3-border-top">
+    <li>
+      <h3>Frozen</h3>
+      <p>The response to the animations was ridiculous</p>
+    </li>
+    <li>
+      <h3>The Fault in Our Stars</h3>
+      <p>Touching, gripping and genuinely well made</p>
+    </li>
+    <li>
+      <h3>The Avengers</h3>
+      <p>A huge success for Marvel and Disney</p>
+    </li>
+  </ul>
+  <div class="w3-container w3-indigo w3-large"><span class="w3-right">Next</span></div>
+</div>
+</div>
+
+<div class="w3-half">
+<div class="w3-card white">
+  <div class="w3-container w3-theme">
+    <h3>Theme</h3>
+  </div>
+  <div class="w3-container">
+  <h3 class="w3-text-theme">Movies 2014</h3>
+  </div>
+  <ul class="w3-ul w3-border-top">
+    <li>
+      <h3>Frozen</h3>
+      <p>The response to the animations was ridiculous</p>
+    </li>
+    <li>
+      <h3>The Fault in Our Stars</h3>
+      <p>Touching, gripping and genuinely well made</p>
+    </li>
+    <li>
+      <h3>The Avengers</h3>
+      <p>A huge success for Marvel and Disney</p>
+    </li>
+  </ul>
+  <div class="w3-container w3-theme w3-large"><span class="w3-right">Next</span></div>
+</div>
+</div>
+</div>
+
+<div class="w3-container">
+  <hr>
+  <div class="w3-center">
+    <h2>Tables</h2>
+    <p w3-class="w3-large">Don't worry. W3.CSS takes care of your tables.</p>
+  </div>
+<div class="w3-responsive w3-card-4">
+<table class="w3-table w3-striped w3-bordered">
+<thead>
+<tr class="w3-theme">
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Jill</td>
+  <td>Smith</td>
+  <td>50</td>
+</tr>
+<tr class="w3-white">
+  <td>Eve</td>
+  <td>Jackson</td>
+  <td>94</td>
+</tr>
+<tr>
+  <td>Adam</td>
+  <td>Johnson</td>
+  <td>67</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+{% endblock %}
