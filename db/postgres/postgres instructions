@@ -1,20 +1,25 @@
+
+docker run --name postgres -e POSTGRES_PASSWORD=pollito -d postgres
+e
 docker exec -it 82 bash
 
 luego para entrar al postgres 
 su - postgres
 
-crear usuario en la db --pass data
+para ver en que encoding estan las cosas; 
+psql -c "\l";
+
+crear usuario en la db 
 createuser dataware -d -P 
-
+pollito
 crear la db para las donaciones de organos 
-createdb donantes;
 
-
+createdb donantes -E 'LATIN1' -T template0;
 para acceder a la db 
-psql donantes
+psql donantes;
 
 para setear el idioma a latino acetos para los organos y demás
-initdb -E LATIN1
+initdb -E LATIN1;
 
 para dar formato de dia mes año igual que la data 
 
@@ -57,7 +62,7 @@ para agregar la data del csv
 
 primero set el encoding set client_encoding to 'latin1' 
 
-COPY donante FROM '/var/lib/postgresql/donantes.csv' WITH DELIMITER ',' CSV HEADER;
+COPY donante FROM '/donantes.csv' WITH DELIMITER ',' CSV HEADER encoding 'latin1';
 
 dio error del size en establecimiento para alterarla usar
 ALTER TABLE donante ALTER COLUMN ESTABLECIMIENTO TYPE varchar(200);

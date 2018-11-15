@@ -1,0 +1,31 @@
+para echarlo  a andar docker start 0490efcff4de
+docker run -it mongo /bin/bash
+
+para entrar al server del mongo  
+usar mongod
+
+luego CRTL c una vez que muestre el puerto y entrar al mongo
+
+para crear la db o cambiarse a ésta
+use en_espera_organo
+
+para ver en que base estamos 
+db 
+
+para mover el archivo de la local al container 
+docker cp './Escritorio/proyectoFausto/db/mongo/enEsperaOrg.csv' c30e32d7649d:/enEsperaOrg.csv
+
+para meterle datos y crear la coleccion
+pero no se puede ejecutar en el cliente de mongo, hay que moverse al shell del container (root@c30e32d7649d:/#)
+mongoimport -d en_espera_organo -c esperando_organo --type CSV --file /enEsperaOrg.csv --headerline
+
+para shecar que si esta la info ok en la collection 
+show dbs
+use en_espera_organo
+show collections
+db.esperando_organo.find()
+
+para tirar la colección si no salió bien (hay que estar dentro de la db usando los comandos anteriores) 
+db.esperando_organo.drop()
+
+

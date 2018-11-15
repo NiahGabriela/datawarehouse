@@ -1,0 +1,14 @@
+docker run -d --name hospitales -p 8091-8094:8091-8094 -p 11210:11210 couchbase
+
+luego ir a http://localhost:8091
+
+y configurarlo ahi (le puse el minimo a todo) 
+
+para pasar el file de la local al container 
+docker cp './Escritorio/proyectoFausto/db/couchBase/Establecimientos.csv' cee1d5204aa7:/Establecimientos.csv
+
+para importar del csv a la db (desde el container root@cee1d5204aa7:/#) 
+cbimport csv -c couchbase://127.0.0.1 -u dataware -p fausto123 -b hospital -d file:///Establecimientos.csv -g key::%CODIGO_ENTIDAD_FEDERATIVA% -t 4
+
+
+

@@ -3,16 +3,26 @@ ssh data@213.136.87.31
 seguido de la contraseña -- data
 
 luego tmux a
+
+para descargar la mysql
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=pollito -d mysql:8.0.13
+
 Para ingresar al contenedor utilizar el comando 
 docker exec -it 74 bash
+para entrar al mysql 
 
 mysql --local-infile=1 -u root -p
 
 pass my-secret-pw
 
+crear la base 
+CREATE DATABASE trasplante;
+
+USE trasplante;
+
 Crear tabla ------ 
 
-CREATE TABLE transplantes (
+CREATE TABLE trasplantes (
 SEXO VARCHAR(15),
 INSTITUCION VARCHAR(15),
 ESTADO_TRASPLANTE VARCHAR(30),
@@ -45,5 +55,30 @@ setear en la base de datos los caracteres especiales :v
 
 SET NAMES 'latin1'
 
+para agregar el archivo de la local al container 
+docker cp './Escritorio/proyectoFausto/db/mysql/Trasplantes.csv' 431fba412348:/trasplantes.csv
+
 para agregar los caracteres especiales al cargar un archivo csv 
 LOAD DATA LOCAL INFILE 'Trasplantes.csv' INTO TABLE transplante CHARACTER SET latin1 FIELDS TERMINATED BY ',' lines terminated by '\n' IGNORE 1 LINES;
+
+
+
+CONSULTAS ****////
+
+HAVING 
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+
+GROUP 
+
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+
+
