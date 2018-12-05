@@ -49,6 +49,9 @@ SHOW VARIABLES LIKE 'local_infile';
 si local-infile =0 cambiar a 1 asi: 
 SET GLOBAL local_infile = 1;
 
+si sigue dando error entrar con 
+mysql -u myuser -p --local-infile trasplante;
+
 para agregar un archivo al docker scp Transplantes.csv data@213.136.87.31:~
 
 setear en la base de datos los caracteres especiales :v
